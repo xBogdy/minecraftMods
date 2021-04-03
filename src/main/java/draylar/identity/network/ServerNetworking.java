@@ -13,6 +13,9 @@ import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.registry.Registry;
 
 import java.util.Date;
@@ -98,6 +101,9 @@ public class ServerNetworking implements NetworkHandler {
                             //TODO: intoarce cum a fost
 //                        Components.CURRENT_IDENTITY.get(context.getPlayer()).setIdentity(() type.create(context.getPlayer().world));
                         Components.CURRENT_IDENTITY.get(context.getPlayer()).setIdentity((LivingEntity) type.create(context.getPlayer().world));
+
+                        context.getPlayer().playSound(SoundEvents.BLOCK_LEVER_CLICK, SoundCategory.PLAYERS,1F,1F);
+                        context.getPlayer().addCritParticles(context.getPlayer());
                     }
 
                     // Refresh player dimensions
