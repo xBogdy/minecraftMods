@@ -41,20 +41,23 @@ public class EntityWidget extends AbstractPressableButtonWidget {
     }
 
         static int tick=0;
+        static int checker =0;
     public static void poo(){
         tick++;
         if(tick >= 1200){
             System.out.println("tick="+tick);
             tick=0;
+
         }
     }
     //TODO: functie statica care o pot pune in tick
     public static void pooo(){
 //        System.out.println("cristofer trimete stanga");
         PacketByteBuf packet = new PacketByteBuf(Unpooled.buffer());
-        if(tick == 1199){
+        if(tick == 1199 && checker % 2 == 0){
+            //TODO fa ca nextint sa fie -1 daca alege ceva special
             Random random = new Random();
-            int jk = random.nextInt(70);
+            int jk = random.nextInt(69);
             if(jk==0) {
                 packet.writeIdentifier(Registry.ENTITY_TYPE.getId(EntityType.ARMOR_STAND));
             }else if(jk == 1){
@@ -195,8 +198,6 @@ public class EntityWidget extends AbstractPressableButtonWidget {
                 packet.writeIdentifier(Registry.ENTITY_TYPE.getId(EntityType.ZOMBIE_VILLAGER));
             }else if(jk==69){
                 packet.writeIdentifier(Registry.ENTITY_TYPE.getId(EntityType.ZOMBIFIED_PIGLIN));
-            }else if(jk==70){
-                packet.writeIdentifier(Registry.ENTITY_TYPE.getId(EntityType.ENDER_DRAGON));
             }
             ClientSidePacketRegistry.INSTANCE.sendToServer(ClientNetworking.IDENTITY_REQUEST, packet);
         }

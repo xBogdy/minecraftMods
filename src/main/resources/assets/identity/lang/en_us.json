@@ -10,7 +10,7 @@
   "identity.test_positive": "%s is disguised as a %s.",
   "identity.test_failed": "%s is not disguised as a %s.",
   "identity.menu_hint": "To gain an Identity, slay any creature in your world...",
-  "identity.help": "Open Identity help menu",
+  "identity.help": "Turn off/on random morphing",
   "identity.help.welcome": "Welcome to Identity, a modern version of Morph built for Fabric, written by Draylar.",
   "identity.help.credits": "Thank you to everyone who supports Identity through bug reporting and suggestions!",
   "identity.help.support_label": "Experiencing an issue or want to post suggestions?",

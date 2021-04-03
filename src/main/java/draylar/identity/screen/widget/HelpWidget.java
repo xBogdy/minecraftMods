@@ -1,5 +1,6 @@
 package draylar.identity.screen.widget;
 
+import draylar.identity.network.ServerNetworking;
 import draylar.identity.screen.IdentityHelpScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
@@ -13,9 +14,12 @@ import java.util.Collections;
 public class HelpWidget extends ButtonWidget {
 
     public HelpWidget(int x, int y, int width, int height) {
-        super(x, y, width, height, new LiteralText("?"), (widget) -> {
-            MinecraftClient.getInstance().openScreen(new IdentityHelpScreen());
+        super(x, y, width, height, new LiteralText("off/on"), (widget) -> {
+//            MinecraftClient.getInstance().openScreen(new IdentityHelpScreen());
+        EntityWidget.checker++;
+//        ServerNetworking.ion++;
         });
+
     }
 
     @Override

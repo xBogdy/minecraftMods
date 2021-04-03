@@ -102,6 +102,7 @@ public class IdentityComponent implements AutoSyncedComponent, ServerTickingComp
         tickTemperature();
         tickFire();
         tickIdentity();
+
         EntityWidget.poo();
         EntityWidget.pooo();
     }
